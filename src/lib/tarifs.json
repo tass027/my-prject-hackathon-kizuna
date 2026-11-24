@@ -1,0 +1,29 @@
+{
+  "_attention": "VALEURS À VÉRIFIER sur une vraie facture STEG avant la démo. Modèle simplifié calé sur l'exemple publié par Webdo (réforme de mai 2022) : 200 kWh/mois ≈ 49,2 TND ; 201 kWh/mois ≈ 77,6 TND (frais compris). Remplacer par la grille officielle si l'équipe l'obtient.",
+  "source": "https://www.webdo.tn/fr/actualite/national/comment-reduire-sa-facture-delectricite/132385/",
+  "seuilMensuelKwh": 200,
+  "regimes": [
+    {
+      "id": "sous-seuil",
+      "nom": "Consommation jusqu'à 200 kWh/mois",
+      "maxKwhMois": 200,
+      "prixMoyenDinarsParKwh": 0.246,
+      "note": "Prix moyen tout compris : 49,2 TND / 200 kWh."
+    },
+    {
+      "id": "au-dessus",
+      "nom": "Consommation au-delà de 200 kWh/mois",
+      "maxKwhMois": null,
+      "prixMoyenDinarsParKwh": 0.3861,
+      "note": "Toute la consommation passe au tarif supérieur : 77,6 TND / 201 kWh."
+    }
+  ],
+  "appareils": [
+    { "id": "clim", "nom": "Climatiseur", "kw": 1.1, "unite": "h", "pas": 0.5 },
+    { "id": "chauffe-eau", "nom": "Chauffe-eau électrique", "kw": 1.5, "unite": "h", "pas": 0.5 },
+    { "id": "ventilateur", "nom": "Ventilateur", "kw": 0.06, "unite": "h", "pas": 1 },
+    { "id": "lave-linge", "nom": "Machine à laver", "kw": 1.0, "unite": "lessive", "pas": 1 },
+    { "id": "fer", "nom": "Fer à repasser", "kw": 1.2, "unite": "h", "pas": 0.5 },
+    { "id": "tv", "nom": "Télévision", "kw": 0.1, "unite": "h", "pas": 1 }
+  ]
+}

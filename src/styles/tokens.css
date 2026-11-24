@@ -1,0 +1,91 @@
+/* Mieru — généré depuis tokens.json de la charte (thème Jour = défaut, thème Nuit = [data-theme="dark"] ou préférence système). */
+:root {
+  --washi: #f3e9d4;
+  --washi-raised: #fbf6ec;
+  --line: #e1d3b5;
+  --sumi: #1c2638;
+  --sumi-muted: #5b5242;
+  --ai: #1d5c9e;
+  --ai-soft: #dbe6f1;
+  --ai-300: #8db3d9;
+  --on-ai: #ffffff;
+  --vermillon: #d9482b;
+  --shu: #b3341b;
+  --shu-soft: #f9e2d9;
+  --on-shu: #ffffff;
+  --kincha: #8a5208;
+  --kincha-soft: #f4e3c3;
+  --or: #d9a23a;
+  --matcha: #466428;
+  --matcha-soft: #e3ead3;
+  --sakura: #efb3bc;
+  --sakura-soft: #f8e3e5;
+  --focus: var(--ai);
+  --shadow-sheet: 0 8px 24px rgba(28,38,56,0.10);
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-arch: 999px;
+  --font-display: "Shippori Mincho B1", "Noto Serif JP", serif;
+  --font-sans: "Noto Sans", system-ui, sans-serif;
+  --font-arabic: "Noto Kufi Arabic", system-ui, sans-serif;
+  --font-arabic-display: "Aref Ruqaa", "Noto Kufi Arabic", serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+[data-theme="dark"] {
+  --washi: #121a28;
+  --washi-raised: #1b2536;
+  --line: #2e3a50;
+  --sumi: #f3e9d4;
+  --sumi-muted: #b8ad97;
+  --ai: #8fbbe8;
+  --ai-soft: #1d3250;
+  --ai-300: #3d5f8a;
+  --on-ai: #0e1522;
+  --vermillon: #f08166;
+  --shu: #f08166;
+  --shu-soft: #3d1e18;
+  --on-shu: #1a0c08;
+  --kincha: #e6b35c;
+  --kincha-soft: #35290f;
+  --or: #d9a23a;
+  --matcha: #a9c98a;
+  --matcha-soft: #1f2b17;
+  --sakura: #c97f8b;
+  --sakura-soft: #3a2328;
+  --focus: var(--ai);
+  --shadow-sheet: 0 8px 24px rgba(0,0,0,0.45);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --washi: #121a28;
+    --washi-raised: #1b2536;
+    --line: #2e3a50;
+    --sumi: #f3e9d4;
+    --sumi-muted: #b8ad97;
+    --ai: #8fbbe8;
+    --ai-soft: #1d3250;
+    --ai-300: #3d5f8a;
+    --on-ai: #0e1522;
+    --vermillon: #f08166;
+    --shu: #f08166;
+    --shu-soft: #3d1e18;
+    --on-shu: #1a0c08;
+    --kincha: #e6b35c;
+    --kincha-soft: #35290f;
+    --or: #d9a23a;
+    --matcha: #a9c98a;
+    --matcha-soft: #1f2b17;
+    --sakura: #c97f8b;
+    --sakura-soft: #3a2328;
+    --focus: var(--ai);
+    --shadow-sheet: 0 8px 24px rgba(0,0,0,0.45);
+  }
+}
