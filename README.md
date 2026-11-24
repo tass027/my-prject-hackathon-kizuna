@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assets/banner.png" alt="Mieru - the Kizuna bridge" width="100%">
+<img src="public/assets/banner.png" alt="Mieru - the Kizuna bridge" width="100%">
 
 <br>
 
@@ -35,7 +35,7 @@ Mieru is a progressive web app (PWA) built in 24 hours at the **Kizuna hackathon
 
 <div align="center">
 
-<img src="assets/slide-story.png" alt="16 July 2026, 2:05 PM, Le Bardo: another power cut" width="100%">
+<img src="public/assets/slide-story.png" alt="16 July 2026, 2:05 PM, Le Bardo: another power cut" width="100%">
 
 </div>
 
@@ -49,7 +49,7 @@ Summer 2026: during the heatwave, STEG carried out rotating power cuts, district
 
 <div align="center">
 
-<img src="assets/slide-numbers.png" alt="Summer 2026: demand outran supply" width="100%">
+<img src="public/assets/slide-numbers.png" alt="Summer 2026: demand outran supply" width="100%">
 
 </div>
 
@@ -77,7 +77,7 @@ Households face a second trap: above **200 kWh a month, all of their consumption
 
 <div align="center">
 
-<img src="assets/slide-load-shedding.png" alt="Le Bardo, 3 pm: 3 homes limited instead of 65 cut off" width="100%">
+<img src="public/assets/slide-load-shedding.png" alt="Le Bardo, 3 pm: 3 homes limited instead of 65 cut off" width="100%">
 
 </div>
 
@@ -105,7 +105,7 @@ Households face a second trap: above **200 kWh a month, all of their consumption
 
 <div align="center">
 
-<img src="assets/slide-steg.png" alt="STEG dashboard: from the whole country to the front door" width="100%">
+<img src="public/assets/slide-steg.png" alt="STEG dashboard: from the whole country to the front door" width="100%">
 
 </div>
 
@@ -126,7 +126,7 @@ Households face a second trap: above **200 kWh a month, all of their consumption
 
 <div align="center">
 
-<img src="assets/pipeline.svg" alt="Processing pipeline" width="100%">
+<img src="public/assets/pipeline.svg" alt="Processing pipeline" width="100%">
 
 </div>
 
@@ -168,7 +168,7 @@ Households face a second trap: above **200 kWh a month, all of their consumption
 
 <div align="center">
 
-<img src="assets/aaddad-moods.png" alt="Aaddad in three moods: calm, worried, happy" width="100%">
+<img src="public/assets/aaddad-moods.png" alt="Aaddad in three moods: calm, worried, happy" width="100%">
 
 </div>
 
@@ -184,7 +184,7 @@ Households face a second trap: above **200 kWh a month, all of their consumption
 
 <div align="center">
 
-<img src="assets/hero-bridge.png" alt="Aaddad on the Kizuna bridge between Sidi Bou Said and the torii" width="60%">
+<img src="public/assets/hero-bridge.png" alt="Aaddad on the Kizuna bridge between Sidi Bou Said and the torii" width="60%">
 
 </div>
 
@@ -192,7 +192,7 @@ Households face a second trap: above **200 kWh a month, all of their consumption
 
 <div align="center">
 
-<img src="assets/slide-vision.png" alt="16 July 2027: the street stays lit" width="100%">
+<img src="public/assets/slide-vision.png" alt="16 July 2027: the street stays lit" width="100%">
 
 </div>
 
