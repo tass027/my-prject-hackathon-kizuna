@@ -1,43 +1,57 @@
 <div align="center">
 
-<img src="public/assets/mieru-mark.svg" alt="Mieru logo" width="96">
+<img src="assets/banner.png" alt="Mieru - the Kizuna bridge" width="100%">
 
-# Mieru 見える — the Kizuna bridge
+<br>
 
-**See every home, so a whole neighbourhood never goes dark again.**
+![React](https://img.shields.io/badge/React-18-1d5da0?style=flat-square&logo=react&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-PWA-d9482b?style=flat-square&logo=vite&logoColor=white)
+![Supabase](https://img.shields.io/badge/Supabase-Realtime-8a5208?style=flat-square&logo=supabase&logoColor=white)
+![Tesseract.js](https://img.shields.io/badge/Tesseract.js-OCR-46632a?style=flat-square)
+![Tests](https://img.shields.io/badge/Tests-37%20passing-1d5da0?style=flat-square)
+![Languages](https://img.shields.io/badge/FR%20%2F%20EN%20%2F%20AR-d9482b?style=flat-square)
 
-A progressive web app (PWA) built in 24 hours at the **Kizuna hackathon 🇹🇳 × 🇯🇵**.
-It reads Tunisian households' electricity meters, warns them before the 200 kWh threshold, and gives STEG (the national utility) a home-by-home map so it can target instead of cutting.
+**See every home, so we never have to cut a whole neighbourhood.**
 
-`React` · `Vite` · `PWA` · `Supabase` · `Tesseract.js` · `Open-Meteo` · `PVGIS` · FR / EN / AR
+[Story](#the-story) · [Problem](#problem) · [Solution](#solution) · [Features](#features) · [How it works](#how-it-works) · [Aaddad](#meet-aaddad-the-mascot) · [Installation](#installation) · [Supabase](#data-modes-and-supabase) · [Aaddad AI](#aaddad-ai-assistant) · [Team](#team)
 
-### 👉 [Try the app online](https://hackaton-kizuna.vercel.app) · [STEG dashboard (demo)](https://hackaton-kizuna.vercel.app/#/steg)
+### 👉 [Try the app](https://hackaton-kizuna.vercel.app) · [STEG dashboard (demo)](https://hackaton-kizuna.vercel.app/#/steg)
 
 </div>
 
 ---
 
-## Contents
+## Overview
 
-1. [The problem](#the-problem)
-2. [Our solution](#our-solution)
-3. [Features](#features)
-4. [The Japanese touch](#the-japanese-touch)
-5. [Quick start](#quick-start)
-6. [Data modes and Supabase](#data-modes-and-supabase)
-7. [Aaddad AI assistant](#aaddad-ai-assistant)
-8. [Deployment](#deployment)
-9. [Tests](#tests)
-10. [Project structure](#project-structure)
-11. [Privacy and legal framework](#privacy-and-legal-framework)
-12. [Known limits and next steps](#known-limits-and-next-steps)
-13. [Team](#team)
+Mieru is a progressive web app (PWA) built in 24 hours at the **Kizuna hackathon 🇹🇳 × 🇯🇵**. A household photographs its electricity meter, OCR reads the index, and the app warns the family before the **200 kWh** threshold. The same readings feed a home-by-home map for **STEG**, the national utility, so it can target the biggest users instead of cutting whole districts.
 
----
+**Problem.** STEG sees districts, not homes. During a heatwave it cuts everyone, including households that save energy and people who depend on medical equipment.
 
-## The problem
+**Solution.** Three verbs: **See** (the household reads its meter), **Connect** (readings reach STEG), **Protect** (limit the biggest users first, never touch priority homes).
+
+> In our simulation of the Le Bardo district at 105% of capacity: **3 homes limited to 2 kVA instead of 65 homes cut off.**
+
+## The story
+
+<div align="center">
+
+<img src="assets/slide-story.png" alt="16 July 2026, 2:05 PM, Le Bardo: another power cut" width="100%">
+
+</div>
+
+16 July 2026, 2:05 pm, Le Bardo. Sonia switched off the AC at 1 pm, as the radio advised. At 2:05 pm everything stops: her mother's fan, the fridge, the building's water pump. Nobody warned her. One street over, the villa with four air conditioners is cut too, like the whole neighbourhood.
+
+*Sonia is a character. The day is real: STEG announced emergency rotating cuts in 13 large districts of Greater Tunis, Le Bardo among them (STEG statement of 16 July 2026, allAfrica).*
+
+## Problem
 
 Summer 2026: during the heatwave, STEG carried out rotating power cuts, district by district, across Greater Tunis.
+
+<div align="center">
+
+<img src="assets/slide-numbers.png" alt="Summer 2026: demand outran supply" width="100%">
+
+</div>
 
 | Figure | Source |
 |---|---|
@@ -47,70 +61,146 @@ Summer 2026: during the heatwave, STEG carried out rotating power cuts, district
 | Production cost **456 millimes/kWh**, average selling price **291 millimes** | Tuniscope |
 | **85%** of customers use less than 200 kWh a month | Webdo |
 
-**The insight:** STEG sees districts, not homes. So it cuts whole districts, including households that save energy and people who are ill.
+**The insight: STEG sees districts, not homes. So it cuts districts.** Yet 85% of customers use less than 200 kWh a month. They are plunged into darkness because of a handful of homes nobody can see.
 
 Households face a second trap: above **200 kWh a month, all of their consumption moves to the higher rate** (about +28 TND on the bill).
 
-## Our solution
+## Solution
 
-Three verbs:
+<div align="center">
 
-- **見る See.** The household photographs its meter. Mieru shows how much is left before 200 kWh, and what the heat will cost.
-- **繋ぐ Connect.** Readings flow to STEG, which gets a map of every district and every home.
-- **守る Protect.** When the grid is overloaded, STEG first limits the biggest users, warns them 15 minutes ahead, and never touches homes with medical equipment.
+| 見る **See** | 繋ぐ **Connect** | 守る **Protect** |
+|:---:|:---:|:---:|
+| Photo of the meter, how much is left before 200 kWh, what the heat will cost | Readings flow to STEG: a map of every district and every home | Limit the biggest users first, warn 15 minutes ahead, never touch medical homes |
 
-> In our simulation of the Le Bardo district at 105% of capacity: **3 homes limited to 2 kVA instead of 65 homes cut off.**
+</div>
+
+<div align="center">
+
+<img src="assets/slide-load-shedding.png" alt="Le Bardo, 3 pm: 3 homes limited instead of 65 cut off" width="100%">
+
+</div>
 
 ## Features
 
 ### For households
 
-| Feature | Description | Files |
-|---|---|---|
-| Create, join, demo | Create a meter, join the family's meter, or try the “Ben Salah home” demo | `src/pages/Bienvenue.jsx`, `src/lib/db.js` |
-| Photo reading | Photo of the meter, index read by OCR, validation | `src/pages/Releve.jsx`, `src/lib/ocr.js` |
-| “Kizuna bridge” gauge | Aaddad walks from the Sidi Bou Said door toward the 200 kWh torii | `src/components/PontGauge.jsx` |
-| Forecast and extra cost | Estimated day the threshold is crossed, extra cost in dinars | `src/lib/calcul.js` |
-| Monthly chart | Readings, forecast, threshold | `src/components/Graphique.jsx` |
-| Heatwave alert | 3-day forecast (35 °C and above) and the extra kWh the AC will use | `src/lib/meteo.js`, `src/components/Canicule.jsx` |
-| STEG notices | High-usage alert, announced power limit or cut, power restored | `src/components/AvisSteg.jsx` |
-| My solar | Production, real consumption, savings for the household and for STEG (PVGIS, or average yield when offline) | `src/components/Photovoltaique.jsx`, `src/lib/pv.js` |
-| Appliance simulator | What each appliance costs | `src/pages/Simulateur.jsx` |
-| Kakeibo | The Japanese monthly review: pick one improvement | `src/pages/Kakeibo.jsx` |
-| Kizuna | A meter shared by the family, in real time, with messages and WhatsApp invites | `src/pages/Kizuna.jsx` |
-| PDF complaint | Dated, sealed photos (EXIF, SHA-256, server time) | `src/pages/Reclamation.jsx`, `src/lib/pdf.js`, `src/lib/preuve.js` |
-| Accessibility | French, English, Arabic (right-to-left), read aloud by Aaddad, large text, reminder after 7 days without a reading | `src/i18n/`, `src/lib/voix.js` |
+| Feature | Description |
+|---|---|
+| Create, join, demo | Create a meter, join the family's meter, or try the “Ben Salah home” demo |
+| Photo reading | Photo of the meter, index read by OCR, validation |
+| “Kizuna bridge” gauge | Aaddad walks from the Sidi Bou Said door toward the 200 kWh torii |
+| Forecast and extra cost | Estimated day the threshold is crossed, extra cost in dinars |
+| Monthly chart | Readings, forecast, threshold |
+| Heatwave alert | 3-day forecast (35 °C and above) and the extra kWh the AC will use |
+| STEG notices | High-usage alert, announced power limit or cut, power restored |
+| My solar | Production, real consumption and savings for the household and for STEG |
+| Appliance simulator | What each appliance costs |
+| Kakeibo | The Japanese monthly review: pick one improvement |
+| Kizuna | A meter shared by the family in real time, with messages and WhatsApp invites |
+| PDF complaint | Dated, sealed photos (EXIF, SHA-256, server time) |
+| Accessibility | French, English, Arabic (right-to-left), read aloud by Aaddad, large text, reminder after 7 days without a reading |
 
 ### For STEG (`#/steg`)
 
-| Feature | Description | Files |
-|---|---|---|
-| Zoomable map | Tunisia → governorates → districts → homes, with the load of each district | `src/components/CarteSteg.jsx` |
-| Targeted load shedding | A plan that limits before cutting, protects priority homes, and compares with cutting the whole district | `src/lib/reseau.js` (`planDelestage`) |
-| Actions on a home | Alert, limit to 2 kVA, cut (with confirmation), restore | `src/pages/Steg.jsx` |
-| Solar | Gain per equipped home, for the household and for STEG | `src/lib/reseau.js` (`gainsSolaire`, `syntheseSolaire`) |
-| Statistics | By governorate, by kWh band, heat versus consumption, homes with sharp rises | `src/components/StegCharts.jsx`, `src/lib/steg.js` |
-| Scenario | “Heatwave peak 3 pm” button to simulate summer | `src/pages/Steg.jsx` |
+<div align="center">
+
+<img src="assets/slide-steg.png" alt="STEG dashboard: from the whole country to the front door" width="100%">
+
+</div>
+
+| Feature | Description |
+|---|---|
+| Zoomable map | Tunisia → governorates → districts → homes, with the load of each district |
+| Targeted load shedding | Limits before cutting, protects priority homes, compares with cutting the whole district |
+| Actions on a home | Alert, limit to 2 kVA, cut (with confirmation), restore |
+| Solar | Gain per equipped home, for the household and for STEG |
+| Statistics | By governorate, by kWh band, heat versus consumption, homes with sharp rises |
+| Scenario | “Heatwave peak 3 pm” button to simulate summer |
 
 **Solar gain (net billing)**
 - Household gain = bill without panels − bill with panels.
 - STEG gain = production × 0.472 TND/kWh (average cost) − household gain.
+
+## How it works
+
+<div align="center">
+
+<img src="assets/pipeline.svg" alt="Processing pipeline" width="100%">
+
+</div>
+
+1. The household photographs the meter (`Releve.jsx`).
+2. **Tesseract.js** reads the index and the reading is validated (`ocr.js`, `calcul.js`).
+3. The forecast and extra cost are computed against the 200 kWh threshold.
+4. **Open-Meteo** and **PVGIS** add the heatwave alert and the solar estimate.
+5. With Supabase enabled, readings reach the STEG dashboard, which plans targeted load shedding.
+
+### Technologies
+
+| Technology | Purpose |
+|---|---|
+| React + Vite | Front end, PWA (manifest, service worker) |
+| Supabase | Real-time Kizuna, photo storage, STEG tables, Edge Function |
+| Tesseract.js | OCR of the meter index |
+| Open-Meteo | 3-day weather forecast |
+| PVGIS | Solar production estimate |
+| OpenAI (server-side) | Aaddad assistant |
+| node:test | 37 unit tests |
+
+### Load shedding rules
+
+- A household that declares medical equipment is **never** limited or cut.
+- Always announced **15 minutes ahead**, **60 minutes at most**.
+- Limited to **2 kVA** before any cut.
 
 ## The Japanese touch
 
 | | Concept | In Mieru |
 |---|---|---|
 | 見える化 | *Mieruka*, “making it visible” | The name and the principle of the app |
-| 節電 | *Setsuden*, Japan's 2011 power-saving effort | Targeted load shedding and the neighbourhood “Setsuden challenge” |
+| 節電 | *Setsuden*, Japan's 2011 power-saving effort | Targeted load shedding, the neighbourhood “Setsuden challenge” |
 | 家計簿 | *Kakeibo*, the family budget book | The monthly review |
-| 絆 | *Kizuna*, the bond | The meter shared by the family, and the Tunisia–Japan bridge |
+| 絆 | *Kizuna*, the bond | The shared family meter, the Tunisia–Japan bridge |
 | 判子 | *Hanko*, the seal | The sealed photos in the complaint |
 
-**Aaddad (عدّاد, “meter” in Arabic)** is our mascot: a meter wearing a torii hat (the 200 kWh threshold), with a Sidi Bou Said door for a belly and sakura cheeks. It has three moods: calm, worried, happy.
+## Meet Aaddad, the mascot
 
-## Quick start
+<div align="center">
 
-**Requirements:** Node.js 18 or later.
+<img src="assets/aaddad-moods.png" alt="Aaddad in three moods: calm, worried, happy" width="100%">
+
+</div>
+
+**Aaddad (عدّاد, “meter” in Arabic)** is the meter turned hero: a meter wearing a **torii hat** (the 200 kWh threshold), with a **Sidi Bou Said door** for a belly and **sakura cheeks**. He reacts to your consumption and reads the app aloud.
+
+| Mood | When |
+|---|---|
+| Calm | Under the threshold |
+| Worried | The torii is close |
+| Happy | Monthly goal reached |
+
+**Design system:** Sidi Bou Said and Hokusai blue, torii and flag vermilion, brass, olive, sakura and washi paper. Ukiyo-e print style, Japanese mincho headings, Kufic Arabic, and a gauge that is a bridge.
+
+<div align="center">
+
+<img src="assets/hero-bridge.png" alt="Aaddad on the Kizuna bridge between Sidi Bou Said and the torii" width="60%">
+
+</div>
+
+## The vision
+
+<div align="center">
+
+<img src="assets/slide-vision.png" alt="16 July 2027: the street stays lit" width="100%">
+
+</div>
+
+16 July 2027, 2:05 pm. Sonia's phone buzzes: “Peak at 3 pm. Set the AC to 26 °C for one hour.” She does. The villa next door gets an announced power limit. The fridge keeps running. So does the water pump. **The street stays lit.**
+
+## Installation
+
+**Prerequisites:** Node.js 18 or later.
 
 ```bash
 git clone https://github.com/iness33/hackaton_Kizuna.git
@@ -121,22 +211,23 @@ npm run dev
 
 Open the address shown (for example `http://localhost:5173`).
 
-- **On a phone:** same Wi-Fi as the computer, then the “Network” address shown by Vite.
-- **Camera:** it needs HTTPS or `localhost`. For quick HTTPS, forward port 5173 from the **PORTS** tab in VS Code with *Public* visibility. On a phone, the photo picker opens the camera anyway.
-- **Demo:** the “Try the Ben Salah home demo” button creates a 3-member meter with one month of readings (168 kWh) and 3 kWp of solar panels.
-- **STEG dashboard:** “STEG space (demo)” link on the welcome screen, or `#/steg`.
+- **On a phone:** same Wi-Fi as the computer, then use the “Network” address shown by Vite.
+- **Camera:** needs HTTPS or `localhost`. Forward port 5173 from the **PORTS** tab in VS Code with *Public* visibility for quick HTTPS.
+- **Demo:** “Try the Ben Salah home demo” creates a 3-member meter with one month of readings (168 kWh) and 3 kWp of solar panels.
+- **STEG dashboard:** “STEG space (demo)” on the welcome screen, or `#/steg`.
 
 ## Data modes and Supabase
 
 | Mode | Condition | How it works |
 |---|---|---|
-| **Local** | Default, no setup | Everything runs on a single device (localStorage and IndexedDB). Kizuna stays on that device. |
-| **Cloud** | `.env.local` filled in | Adds real-time Kizuna across phones, photos stored on Supabase, and data sent to the STEG dashboard. |
+| **Local** | Default, no setup | Everything on one device (localStorage and IndexedDB) |
+| **Cloud** | `.env.local` filled in | Real-time Kizuna across phones, photos on Supabase, data sent to STEG |
 
-### Enable Supabase (about 10 minutes)
+<details>
+<summary><b>Enable Supabase (about 10 minutes)</b></summary>
 
 1. Create a free project on [supabase.com](https://supabase.com).
-2. In **SQL Editor**, run `supabase/schema.sql` (tables, photo bucket, real-time, STEG tables `partages_steg` and `avis_steg`, view `steg_foyers`).
+2. In **SQL Editor**, run `supabase/schema.sql`.
 3. In **Project Settings → API**, copy the project URL and the `anon public` key.
 4. Copy `.env.example` to `.env.local` and fill in:
    ```
@@ -147,9 +238,14 @@ Open the address shown (for example `http://localhost:5173`).
 
 > ⚠️ For the hackathon, access rules are deliberately simplified: anyone who knows a meter's ID can read and write to it.
 
+</details>
+
 ## Aaddad AI assistant
 
 The assistant goes through a **Supabase Edge Function** that calls OpenAI server-side. Meter readings are not sent to OpenAI and conversations are not stored. Limit: 20 messages per day per network address.
+
+<details>
+<summary><b>Deploy the assistant</b></summary>
 
 1. Run `supabase/assistant.sql` in the SQL Editor.
 2. Install the Supabase CLI, then:
@@ -158,21 +254,21 @@ The assistant goes through a **Supabase Edge Function** that calls OpenAI server
    supabase secrets set "OPENAI_API_KEY=your-key"
    supabase functions deploy aaddad-assistant
    ```
-3. Fill in `.env.local` (URL and `anon` key), then restart the app.
+3. Fill in `.env.local`, then restart the app.
 
 > 🔒 The OpenAI key must **never** go in `.env.local`, in a `VITE_*` variable or in client code.
 
+</details>
+
 ## Deployment
 
-The app is live on Vercel: **https://hackaton-kizuna.vercel.app** (local mode: each visitor's data stays on their own device).
-
-Every `git push` to `main` redeploys automatically. To deploy from scratch:
+Live on Vercel: **https://hackaton-kizuna.vercel.app**. Every `git push` to `main` redeploys automatically.
 
 ```bash
 npm run build
 ```
 
-Then on [vercel.com](https://vercel.com): **Add New → Project**, import the repository (Vite is detected automatically). For cloud mode, add `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` under **Settings → Environment Variables**. Vercel provides the HTTPS the camera needs.
+To deploy from scratch: on [vercel.com](https://vercel.com), **Add New → Project**, import the repository (Vite is detected automatically). For cloud mode, add `VITE_SUPABASE_URL` and `VITE_SUPABASE_ANON_KEY` under **Settings → Environment Variables**.
 
 ## Tests
 
@@ -180,63 +276,55 @@ Then on [vercel.com](https://vercel.com): **Add New → Project**, import the re
 npm test
 ```
 
-37 tests (Node.js `node:test`):
-
-- **Calculations** (`calcul.test.js`): monthly cost, threshold, forecast, reading validation.
-- **Weather** (`meteo.test.js`): heatwave alert and extra kWh.
-- **Solar** (`pv.test.js`).
-- **STEG dashboard** (`steg.test.js`): aggregation and privacy rules.
-- **Grid and load shedding** (`reseau.test.js`): limit before cutting, priority homes never touched, every action announced ahead and lasting 60 minutes at most, solar gains.
+37 tests with Node.js `node:test`: calculations, weather, solar, STEG aggregation and privacy rules, grid and load shedding (limit before cutting, priority homes never touched, every action announced ahead, solar gains).
 
 ## Project structure
 
 ```
 hackaton_Kizuna/
-├── public/assets/        # Logo, Aaddad (3 moods), Kizuna bridge, seigaiha and zellige patterns
+├── public/assets/        # Logo, Aaddad (3 moods), Kizuna bridge, patterns
 ├── src/
 │   ├── pages/            # Bienvenue, Accueil, Releve, Simulateur, Kakeibo, Kizuna, Reclamation, Steg
-│   ├── components/       # PontGauge, Graphique, Canicule, Photovoltaique, AvisSteg,
-│   │                     # ConditionsSteg, PartageSteg, CarteSteg, StegCharts, Chrome, Icon
+│   ├── components/       # PontGauge, Graphique, Canicule, Photovoltaique, AvisSteg, CarteSteg, StegCharts...
 │   ├── lib/              # calcul, reseau, steg, pv, meteo, ocr, preuve, pdf, voix, db, store
 │   │   └── tarifs.json   # Tariff grid and appliance power ratings
 │   ├── i18n/             # fr.js, en.js, ar.js
-│   └── styles/           # tokens.css (brand), app.css
+│   └── styles/           # tokens.css, app.css
 ├── supabase/             # schema.sql, assistant.sql, aaddad-assistant Edge Function
 ├── .env.example
-├── index.html
-├── package.json
-└── vite.config.js        # PWA (manifest, service worker)
+└── vite.config.js        # PWA
 ```
 
 File and folder names are in French, the team's working language.
 
 ## Privacy and legal framework
 
-- **Sharing with STEG:** a condition of use, accepted once per meter on the “Before you start” screen. Households can always see what STEG sees (Kizuna → “What STEG sees”).
+- **Sharing with STEG:** a condition of use, accepted once per meter. Households can always see what STEG sees (Kizuna → “What STEG sees”).
 - **Never sent:** members' first names, photos, Kizuna messages, kakeibo.
-- **Priority homes:** a household that declares medical equipment is never limited or cut.
-- **Load shedding:** always announced 15 minutes ahead, 60 minutes at most, limited to 2 kVA before any cut.
-- **Intended legal basis:** an agreement between the household and STEG (Tunisian Organic Law No. 2004-63, art. 29), with prior declaration to INPDP, the data protection authority, before any real roll-out.
-- **Demo data:** the 1,226 homes on the map, their positions and their loads are **simulated**. Real Mieru households are marked “Mieru household”.
+- **Intended legal basis:** an agreement between the household and STEG (Tunisian Organic Law No. 2004-63, art. 29), with prior declaration to INPDP before any real roll-out.
+- **Demo data:** the 1,226 homes on the map, their positions and loads are **simulated**.
 
-## Known limits and next steps
+## Known limits
 
 - Check the tariff grid (`src/lib/tarifs.json`) against a real STEG bill.
-- Test OCR on real meter photos and adjust the frame (`src/lib/ocr.js`, `.camera .frame` in `app.css`).
+- Test OCR on real meter photos and adjust the frame.
 - The cloud part of the STEG dashboard has not yet been tested against a real Supabase project.
-- Limiting or cutting **remotely** requires smart meters. Without them, Mieru alerts and STEG acts on the ground.
-- Coming next: push notifications, Kizuna invite QR code, a one-district pilot with STEG.
-- `src/lib/i18n.js` and `src/components/Courbe.jsx` are obsolete and can be deleted.
+- Remote limiting or cutting requires smart meters. Without them, Mieru alerts and STEG acts on the ground.
+
+## Roadmap
+
+- [ ] Push notifications
+- [ ] Kizuna invite QR code
+- [ ] One-district pilot with STEG
+- [ ] Remove obsolete `src/lib/i18n.js` and `src/components/Courbe.jsx`
 
 ## Team
 
-Built during the Kizuna hackathon (Tunisia × Japan).
-
 | Role | Member | Scope |
 |---|---|---|
-| M1 · Front end | [Yesmine Dhouib] | `src/pages/*`, `src/components/*`, `src/styles/*` |
-| M2 · Back end, calculations, Kizuna | [ines.sefi] | `src/lib/calcul.js`, `src/lib/db.js`, `src/lib/store.jsx`, `supabase/` |
-| M3 · OCR, evidence, PDF, pitch | [tasnim elmehrabi] | `src/lib/ocr.js`, `src/lib/preuve.js`, `src/lib/pdf.js` |
+| Front end | Yesmine Dhouib | `src/pages/*`, `src/components/*`, `src/styles/*` |
+| Back end, calculations, Kizuna | ines.sefi | `src/lib/calcul.js`, `src/lib/db.js`, `src/lib/store.jsx`, `supabase/` |
+| OCR, evidence, PDF, pitch | Tasnim Elmehrabi ([GitHub](https://github.com/tass027)) | `src/lib/ocr.js`, `src/lib/preuve.js`, `src/lib/pdf.js` |
 
 ---
 
