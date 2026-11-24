@@ -322,9 +322,9 @@ File and folder names are in French, the team's working language.
 
 | Role | Member | Scope |
 |---|---|---|
-| Front end | Yesmine Dhouib | `src/pages/*`, `src/components/*`, `src/styles/*` |
+| Front end | Tasnim Elmehrabi | `src/pages/*`, `src/components/*`, `src/styles/*` |
 | Back end, calculations, Kizuna | ines.sefi | `src/lib/calcul.js`, `src/lib/db.js`, `src/lib/store.jsx`, `supabase/` |
-| OCR, evidence, PDF, pitch | Tasnim Elmehrabi ([GitHub](https://github.com/tass027)) | `src/lib/ocr.js`, `src/lib/preuve.js`, `src/lib/pdf.js` |
+| OCR, evidence, PDF, pitch | Yesmine Dhouib ([GitHub](https://github.com/tass027)) | `src/lib/ocr.js`, `src/lib/preuve.js`, `src/lib/pdf.js` |
 
 ---
 
