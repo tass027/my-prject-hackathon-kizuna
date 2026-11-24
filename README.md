@@ -126,7 +126,7 @@ Households face a second trap: above **200 kWh a month, all of their consumption
 
 <div align="center">
 
-<img src="public/assets/pipeline.svg" alt="Processing pipeline" width="100%">
+<img src="public/assets/pipeline.png" alt="Processing pipeline" width="100%">
 
 </div>
 
